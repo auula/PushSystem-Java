@@ -21,7 +21,7 @@
 			  <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
 			  <property name="url" value="jdbc:mysql://120.79.15.136:3306/xywbxt"/>
 			  <property name="username" value="xywbxt"/>
-			  <property name="password" value="123456"/>
+			  <property name="password" value="123456xxxxx*****"/>
 			  <property name="validationQuery">
 				<value>select 1</value>
 			  </property>
