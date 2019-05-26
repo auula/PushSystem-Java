@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<constant name="struts.objectFactory" value="spring"/>
+	
+	<constant name="struts.devMode" value="false" />
+	 
+    
+
+ 
+    <package name="emp" namespace="/emp" extends="struts-default">
+    	
+         <action name="emp-*" class="empAction"
+        	method="{1}">
+        	<result name="login">/admin/main.jsp</result>
+        	<result name="input">/admin/index.jsp</result>
+        	<result name="queryAll">/admin/empList.jsp</result>
+        	<result name="queryByKey">/admin/empList.jsp</result>
+        	<result name="add">/admin/empList.jsp</result>
+        </action>
+    </package>
+    
+    
+    <package name="equ" namespace="/equ" extends="struts-default">
+    	
+         <action name="equ-*" class="equAction"
+        	method="{1}">
+        	<result name="queryAll">/admin/equipmentList.jsp</result>
+        	<result name="queryByKey">/admin/equipmentList.jsp</result>
+        	<result name="update" type="chain">equ-queryAll</result>
+        	<result name="add" type="chain">equ-queryAll</result>
+        	<result name="delete" type="chain">equ-queryAll</result>
+        </action>
+    </package>
+    
+    <package name="fau" namespace="/fau" extends="struts-default">
+    	
+         <action name="fau-*" class="fauAction"
+        	method="{1}">
+        	<result name="queryAll">/admin/faultList.jsp</result>
+        	<result name="queryByKey">/admin/faultList.jsp</result>
+        	<result name="update">/admin/faultList.jsp</result>
+        	<result name="add" type="chain">fau-queryAll</result>
+        	<result name="calls" type="chain">fau-queryAll</result>
+        	<result name="fail" type="chain">fau-queryAll</result>
+        	<result name="delete" type="chain">fau-queryAll</result>
+        	
+        </action>
+    </package>
+    
+     <package name="call" namespace="/call" extends="struts-default">
+    	
+         <action name="call-*" class="callAction"
+        	method="{1}">
+        	<result name="queryAll">/admin/callList.jsp</result>
+        	<result name="queryByKey">/admin/callList.jsp</result>
+        	<result name="update" type="chain">call-queryByEmp</result>
+        	<result name="add" type="chain">call-queryByEmp</result>
+        	<result name="update2" type="chain">call-queryByEmp</result>
+        	<result name="update3" type="chain">call-queryByEmp</result>
+        	<result name="delete" type="chain">call-queryByEmp</result>
+        	<result name="queryByEqu">/admin/callList.jsp</result>
+        	<result name="queryByEmp">/admin/callList.jsp</result>
+        </action>
+    </package>
+    
+     <package name="part" namespace="/part" extends="struts-default">
+    	
+         <action name="part-*" class="partAction"
+        	method="{1}">
+        	<result name="queryAll">/admin/partList.jsp</result>
+        	<result name="queryByKey">/admin/partList.jsp</result>
+        	<result name="queryByKey1">/admin/partList.jsp</result>
+        	<result name="update" type="chain">part-queryByKey1</result>
+        	<result name="add" type="chain">part-queryAll</result>
+        	<result name="delete" type="chain">part-queryAll</result>
+        </action>
+    </package>    	
+    <package name="punch" namespace="/punch" extends="struts-default">
+    	
+         <action name="punch-*" class="punchAction"
+        	method="{1}">
+        	<result name="queryAll">/admin/punchList.jsp</result>
+        	<result name="punchs" type="chain">punch-queryAll</result>
+        	<result name="delete" type="chain">part-queryAll</result>
+        </action>
+    </package>  
+      
+  
+
+    
+ 
+</struts>
+
